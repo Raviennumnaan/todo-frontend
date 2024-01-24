@@ -1,0 +1,25 @@
+.messageContainer {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.messageText {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.actionButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}

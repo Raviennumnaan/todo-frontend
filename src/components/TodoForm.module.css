@@ -1,0 +1,33 @@
+.formContainer {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.textareaField {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.addButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.addButton:hover {
+  background-color: #0056b3;
+}

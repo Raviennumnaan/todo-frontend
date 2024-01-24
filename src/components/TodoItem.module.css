@@ -1,0 +1,32 @@
+.listItem {
+  padding: 10px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.editButton {
+  background-color: #4caf50;
+  color: #fff;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: #147207;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #9c180e;
+}
