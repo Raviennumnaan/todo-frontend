@@ -7,7 +7,6 @@ const TodoForm = ({ hideForm, editObj }) => {
   const [body, setBody] = useState(editObj?.body || "");
   const { addTodo, editTodo, isLoading } = useAppContext();
   const ref = useRef();
-  console.log(editObj);
 
   const handleAddItem = () => {
     if (!title || !body) return;
