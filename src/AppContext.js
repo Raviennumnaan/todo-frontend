@@ -126,11 +126,9 @@ export const AppProvider = ({ children }) => {
 
       if (data.status === "success")
         setTodos((todos) => {
-          console.log(todos);
           const index = todos.findIndex((todo) => todo._id === id);
           if (index === -1) return [...todos];
           todos.splice(index, 1);
-          console.log(todos);
           return [...todos];
         });
     } catch (error) {
