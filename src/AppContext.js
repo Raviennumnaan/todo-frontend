@@ -129,7 +129,8 @@ export const AppProvider = ({ children }) => {
           const index = todos.findIndex((todo) => todo._id === id);
           console.log(index);
           if (index === -1) return [...todos];
-          return [...todos.splice(index, 1)];
+          todos.splice(index, 1);
+          return [...todos];
         });
     } catch (error) {
       console.error(error);
