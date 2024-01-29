@@ -7,6 +7,7 @@ import TodoLists from "../components/TodoLists";
 function Home() {
   const { user, todos } = useAppContext();
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isTodoOpen, setIsTodoOpen] = useState(true);
   const [editObj, setEditObj] = useState(null);
 
   function showForm() {
@@ -22,6 +23,14 @@ function Home() {
     setEditObj({ title, body, id });
   }
 
+  function showTodo() {
+    setIsTodoOpen(true);
+  }
+
+  function hideTodo() {
+    setIsTodoOpen(false);
+  }
+
   if (!user)
     return (
       <Message
@@ -33,10 +42,17 @@ function Home() {
   return (
     <div>
       <div>
-        {isFormOpen && <TodoForm hideForm={hideForm} editObj={editObj} />}
+        {isFormOpen && (
+          <TodoForm
+            hideForm={hideForm}
+            editObj={editObj}
+            showTodo={showTodo}
+            hideTodo={hideTodo}
+          />
+        )}
         {!isFormOpen && <button onClick={showForm}>Add Todo</button>}
       </div>
-      <TodoLists todos={todos} onEdit={handleEdit} />
+      {isTodoOpen && <TodoLists todos={todos} onEdit={handleEdit} />}
       {todos.length === 0 && !isFormOpen && <p>Start by adding a Todo</p>}
     </div>
   );
