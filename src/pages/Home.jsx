@@ -31,7 +31,7 @@ function Home() {
     setIsTodoOpen(false);
   }
 
-  function resetEdiObj() {
+  function resetEditObj() {
     setEditObj(null);
   }
 
@@ -52,7 +52,7 @@ function Home() {
             editObj={editObj}
             showTodo={showTodo}
             hideTodo={hideTodo}
-            resetEdiObj={resetEdiObj}
+            resetEditObj={resetEditObj}
           />
         )}
         {!isFormOpen && <button onClick={showForm}>Add Todo</button>}
