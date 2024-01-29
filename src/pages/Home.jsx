@@ -15,6 +15,7 @@ function Home() {
   }
 
   function hideForm() {
+    setEditObj(null);
     setIsFormOpen(false);
   }
 
@@ -29,10 +30,6 @@ function Home() {
 
   function hideTodo() {
     setIsTodoOpen(false);
-  }
-
-  function resetEditObj() {
-    setEditObj(null);
   }
 
   if (!user)
@@ -52,7 +49,6 @@ function Home() {
             editObj={editObj}
             showTodo={showTodo}
             hideTodo={hideTodo}
-            resetEditObj={resetEditObj}
           />
         )}
         {!isFormOpen && <button onClick={showForm}>Add Todo</button>}

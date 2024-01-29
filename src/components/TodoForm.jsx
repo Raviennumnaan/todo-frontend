@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./TodoForm.module.css";
 import { useAppContext } from "../AppContext";
 
-const TodoForm = ({ hideForm, editObj, showTodo, hideTodo, resetEditObj }) => {
+const TodoForm = ({ hideForm, editObj, showTodo, hideTodo }) => {
   const [title, setTitle] = useState(editObj?.title || "");
   const [body, setBody] = useState(editObj?.body || "");
   const { addTodo, editTodo, isLoading } = useAppContext();
@@ -21,11 +21,7 @@ const TodoForm = ({ hideForm, editObj, showTodo, hideTodo, resetEditObj }) => {
   useEffect(() => {
     hideTodo();
     ref.current.focus();
-
-    return () => {
-      resetEditObj();
-    };
-  }, [hideTodo, resetEditObj]);
+  }, [hideTodo]);
 
   return (
     <div className={styles.formContainer}>
