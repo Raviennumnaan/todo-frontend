@@ -31,6 +31,10 @@ function Home() {
     setIsTodoOpen(false);
   }
 
+  function resetEdiObj() {
+    setEditObj(null);
+  }
+
   if (!user)
     return (
       <Message
@@ -48,6 +52,7 @@ function Home() {
             editObj={editObj}
             showTodo={showTodo}
             hideTodo={hideTodo}
+            resetEdiObj={resetEdiObj}
           />
         )}
         {!isFormOpen && <button onClick={showForm}>Add Todo</button>}
