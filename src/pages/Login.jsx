@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { useAppContext } from "../AppContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const { login } = useAppContext();
 
   const handleEmailChange = (e) => {
@@ -21,6 +23,11 @@ const Login = () => {
     login(email, password);
     setEmail("");
     setPassword("");
+  };
+
+  const handleSignup = function (e) {
+    e.preventDefault();
+    navigate("/signup");
   };
 
   return (
@@ -47,6 +54,7 @@ const Login = () => {
         />
       </div>
       <button type="submit">Login</button>
+      <button onClick={handleSignup}>Signup</button>
     </form>
   );
 };

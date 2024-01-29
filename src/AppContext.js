@@ -76,7 +76,7 @@ export const AppProvider = ({ children }) => {
       });
       const { data } = await res.json();
 
-      setTodos((todos) => [data, ...todos]);
+      setTodos((todos) => [...todos, data]);
     } catch (error) {
       console.error(error);
     } finally {
